@@ -14,8 +14,8 @@
         android:id="@+id/pinFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number|textPassword"
-        android:maxLength="6">
+        android:inputType="numberPassword"
+        android:maxLength="@integer/PIN_LEN">
         <requestFocus />
     </EditText>
 
@@ -30,8 +30,8 @@
         android:id="@+id/pinSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number|textPassword"
-        android:maxLength="6">
+        android:inputType="numberPassword"
+        android:maxLength="@integer/PIN_LEN">
     </EditText>
 
 

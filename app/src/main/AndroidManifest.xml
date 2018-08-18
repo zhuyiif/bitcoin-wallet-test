@@ -20,6 +20,9 @@
         <activity android:name=".activities.PINVerifyActivity">
         </activity>
 
+        <activity android:name=".activities.BitCoinWalletActivity">
+        </activity>
+
     </application>
 
 </manifest>

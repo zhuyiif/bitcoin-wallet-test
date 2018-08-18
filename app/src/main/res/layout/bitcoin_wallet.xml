@@ -11,10 +11,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/pin"
+        android:id="@+id/txtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberPassword"
+        android:inputType="number|textPassword"
         android:maxLength="@integer/PIN_LEN">
         <requestFocus />
     </EditText>
@@ -24,6 +24,6 @@
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="submit" />
+        android:text="wallet" />
 
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.yizhu.bitcoin_starter.R;
 import com.example.yizhu.bitcoin_starter.utils.AppStore;
+import com.example.yizhu.bitcoin_starter.utils.PINChecker;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,30 +33,43 @@ public class PINManagerActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         if(!AppStore.isFirstRun(getApplicationContext())) {
+            finish();
             Intent intent = new Intent(this, PINVerifyActivity.class);
             startActivity(intent);
         }
-
-
+        
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-      //  AppStore.saveLoginWhenFirst(getApplicationContext());
+        AppStore.saveLoginWhenFirst(getApplicationContext());
 
     }
 
     @OnClick(R.id.btnSubmit)
     public void submit() {
 
-        if (firstEditText.getText().toString().equals(secondEditText.getText().toString())) {
+
+
+        String firstPin = firstEditText.getText().toString();
+        String secondPin = secondEditText.getText().toString();
+        if (!PINChecker.isValidPIN(this,firstPin) || !PINChecker.isValidPIN(this,secondPin)) {
+            Toast.makeText(this, "PIN is not valid, should length should be 6", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (firstPin.equals(secondPin)) {
             //save password
             AppStore.savePIN(getApplicationContext(),firstEditText.getText().toString());
+            Toast.makeText(this, "PIN is saved", Toast.LENGTH_SHORT).show();
+            finish();
+            Intent intent = new Intent(this, BitCoinWalletActivity.class);
+            startActivity(intent);
 
         }
         else {
-            Toast.makeText(this, "passwords not match", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "PIN not match", Toast.LENGTH_SHORT).show();
         }
     }
 
