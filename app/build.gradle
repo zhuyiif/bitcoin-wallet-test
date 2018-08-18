@@ -28,4 +28,6 @@ dependencies {
     compile('org.bitcoinj:bitcoinj-core:0.12.2') {
         exclude module: 'scrypt'
     }
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
