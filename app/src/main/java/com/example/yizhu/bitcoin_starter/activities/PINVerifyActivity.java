@@ -17,7 +17,6 @@ import butterknife.OnClick;
 public class PINVerifyActivity extends AppCompatActivity {
 
     @BindView(R.id.pin) EditText pinText;
-
     private int inputWrongTimes = 0;
 
     @Override

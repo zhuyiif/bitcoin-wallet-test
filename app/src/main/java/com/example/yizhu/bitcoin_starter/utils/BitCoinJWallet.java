@@ -3,22 +3,22 @@ package com.example.yizhu.bitcoin_starter.utils;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.NetworkParameters;
-import org.bitcoinj.kits.WalletAppKit;
 import org.bitcoinj.params.RegTestParams;
 
 public class BitCoinJWallet {
     private ECKey myKey;
-    private ECKey forwardKey;
     private NetworkParameters netParams;
 
     public BitCoinJWallet(){
         netParams = RegTestParams.get();
     }
 
+    // create key
     public void CreateMyAddress() {
         myKey = new ECKey();
     }
 
+    // get my address
     public String getMyAddress(){
         if (myKey != null) {
             Address addressFromKey = myKey.toAddress(netParams);
@@ -29,6 +29,7 @@ public class BitCoinJWallet {
         }
     }
 
+    // get private key
     public String getMyPrivateKey() {
         if (myKey != null) {
             return myKey.getPrivKey().toString();
@@ -36,6 +37,5 @@ public class BitCoinJWallet {
         else {
             return "";
         }
-
     }
 }

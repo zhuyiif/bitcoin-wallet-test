@@ -62,7 +62,6 @@ public class PINManagerActivity extends AppCompatActivity {
             finish();
             Intent intent = new Intent(this, BitCoinWalletActivity.class);
             startActivity(intent);
-
         }
         else {
             Toast.makeText(this, "PIN not match", Toast.LENGTH_SHORT).show();

@@ -28,9 +28,7 @@ public class PINUpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pin_modify);
         ButterKnife.bind(this);
-
     }
-
 
     @OnClick(R.id.btnSubmit)
     public void submit() {
@@ -59,9 +57,7 @@ public class PINUpdateActivity extends AppCompatActivity {
         }
 
         AppStore.savePIN(this, firstPin);
-
         Toast.makeText(this, "new PIN is saved", Toast.LENGTH_SHORT).show();
         finish();
-
     }
 }
