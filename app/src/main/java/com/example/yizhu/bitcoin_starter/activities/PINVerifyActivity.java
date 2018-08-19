@@ -41,6 +41,7 @@ public class PINVerifyActivity extends AppCompatActivity {
             inputWrongTimes++;
             if (PINChecker.isInputWrongTooMany(inputWrongTimes)) {
                 Toast.makeText(this, "Too many PIN attempts. Please try again later", Toast.LENGTH_SHORT).show();
+                finish();
             }
             else {
                 Toast.makeText(this, "PIN not match", Toast.LENGTH_SHORT).show();

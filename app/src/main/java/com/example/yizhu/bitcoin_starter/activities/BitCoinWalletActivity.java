@@ -56,7 +56,6 @@ public class BitCoinWalletActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == VERIFY_PIN_REQUEST_CODE) {
-            Toast.makeText(this, "onActivityResult request code", Toast.LENGTH_SHORT).show();
             if (resultCode == RESULT_OK) {
                 // get String data from Intent
                 boolean isVerified = data.getBooleanExtra("result",false);
