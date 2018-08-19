@@ -10,20 +10,39 @@
         android:text="Wallet"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number|textPassword"
-        android:maxLength="@integer/PIN_LEN">
-        <requestFocus />
-    </EditText>
-
 
     <Button
         android:id="@+id/btnChangePIN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Change PIN" />
+
+
+    <Button
+        android:id="@+id/createAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Address" />
+
+    <TextView
+        android:id="@+id/myAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="address is not created yet"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <Button
+        android:id="@+id/showPrivateKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="private key" />
+
+    <TextView
+        android:id="@+id/myPrivateKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="private key is empty"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>
