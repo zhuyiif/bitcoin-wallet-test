@@ -10,6 +10,9 @@ This repo is a very simple mini Android Project, include some basic Android UI, 
 - [x] Change PIN
 - [x] create Wallet address
 - [x] show wallet private key (need PIN)
-- [ ] forward coins to other
+- [x] unit test & instrument test
+- [ ] forward coins to other.(I found some issues with forward bitcoinj coins api.)
+- [ ] put all the string to string resources (don't have time :) )
+
 
 
