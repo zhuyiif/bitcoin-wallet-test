@@ -23,6 +23,9 @@
         <activity android:name=".activities.BitCoinWalletActivity">
         </activity>
 
+        <activity android:name=".activities.PINUpdateActivity">
+        </activity>
+
     </application>
 
 </manifest>

@@ -21,4 +21,16 @@ public class PINChecker {
         //TODO may be need check if pin is number, for now the UI only allow user input number,
         return result;
     }
+
+    public static boolean isInputWrongTooMany(int currentWrongTimes) {
+        return currentWrongTimes >= MAX_INPUT_COUNT;
+    }
+
+    public static boolean isPinSameWithCurrent(Context context, String pin) {
+        if (!isValidPIN(context,pin)){
+            return false;
+        }
+        String currentPin = AppStore.getPIN(context);
+        return currentPin.equals(pin);
+    }
 }

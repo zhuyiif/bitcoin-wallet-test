@@ -29,8 +29,7 @@ public class PINVerifyActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnSubmit)
     public void submit() {
-        String currentPIN = AppStore.getPIN(getApplicationContext());
-        if (currentPIN.equals(pinText.getText().toString())) {
+        if (PINChecker.isPinSameWithCurrent(this,pinText.getText().toString())) {
             Toast.makeText(this, "PIN is OK", Toast.LENGTH_SHORT).show();
             finish();
             Intent intent = new Intent(this, BitCoinWalletActivity.class);
@@ -38,16 +37,13 @@ public class PINVerifyActivity extends AppCompatActivity {
         }
         else {
             inputWrongTimes++;
-            if (inputWrongTimes >= PINChecker.MAX_INPUT_COUNT) {
+            if (PINChecker.isInputWrongTooMany(inputWrongTimes)) {
                 Toast.makeText(this, "Too many PIN attempts. Please try again later", Toast.LENGTH_SHORT).show();
                 finish();
             }
             else {
                 Toast.makeText(this, "PIN not match", Toast.LENGTH_SHORT).show();
             }
-
-
         }
-
     }
 }
