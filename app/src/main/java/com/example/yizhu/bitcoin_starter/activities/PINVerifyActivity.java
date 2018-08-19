@@ -31,15 +31,17 @@ public class PINVerifyActivity extends AppCompatActivity {
     public void submit() {
         if (PINChecker.isPinSameWithCurrent(this,pinText.getText().toString())) {
             Toast.makeText(this, "PIN is OK", Toast.LENGTH_SHORT).show();
-            finish();
             Intent intent = new Intent(this, BitCoinWalletActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+            intent.putExtra("result", true);
+            setResult(RESULT_OK, intent);
             startActivity(intent);
+            finish();
         }
         else {
             inputWrongTimes++;
             if (PINChecker.isInputWrongTooMany(inputWrongTimes)) {
                 Toast.makeText(this, "Too many PIN attempts. Please try again later", Toast.LENGTH_SHORT).show();
-                finish();
             }
             else {
                 Toast.makeText(this, "PIN not match", Toast.LENGTH_SHORT).show();

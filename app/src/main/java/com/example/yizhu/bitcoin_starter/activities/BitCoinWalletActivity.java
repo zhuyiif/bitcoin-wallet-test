@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.yizhu.bitcoin_starter.R;
 import com.example.yizhu.bitcoin_starter.utils.BitCoinJWallet;
@@ -21,6 +22,8 @@ public class BitCoinWalletActivity extends AppCompatActivity {
 
     @BindView(R.id.myPrivateKey)
     TextView myPrivateKey;
+
+    private static final int VERIFY_PIN_REQUEST_CODE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,25 @@ public class BitCoinWalletActivity extends AppCompatActivity {
 
     @OnClick(R.id.showPrivateKey)
     public void showPrivateKey() {
-        myPrivateKey.setText(wallet.getMyPrivateKey());
+        Intent intent = new Intent(this, PINVerifyActivity.class);
+        startActivityForResult(intent, VERIFY_PIN_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Toast.makeText(this, "onActivityResult", Toast.LENGTH_SHORT).show();
+
+        if (requestCode == VERIFY_PIN_REQUEST_CODE) {
+            Toast.makeText(this, "onActivityResult request code", Toast.LENGTH_SHORT).show();
+            if (resultCode == RESULT_OK) {
+                // get String data from Intent
+                boolean isVerified = data.getBooleanExtra("result",false);
+                if (isVerified) {
+                    myPrivateKey.setText(wallet.getMyPrivateKey());
+                }
+            }
+        }
     }
 }

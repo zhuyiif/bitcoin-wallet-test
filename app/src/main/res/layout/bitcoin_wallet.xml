@@ -1,48 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wallet"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnChangePIN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change PIN" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wallet"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-
-    <Button
-        android:id="@+id/createAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Address" />
-
-    <TextView
-        android:id="@+id/myAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="address is not created yet"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <Button
+            android:id="@+id/btnChangePIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change PIN" />
 
 
-    <Button
-        android:id="@+id/showPrivateKey"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="private key" />
+        <Button
+            android:id="@+id/createAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Address" />
 
-    <TextView
-        android:id="@+id/myPrivateKey"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="private key is empty"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/myAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="address is not created yet"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-</LinearLayout>
+
+        <Button
+            android:id="@+id/showPrivateKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="private key" />
+
+        <TextView
+            android:id="@+id/myPrivateKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="private key is empty"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+
+</ScrollView>
